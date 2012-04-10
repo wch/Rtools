@@ -56,7 +56,8 @@ class SendSelectionCommand(sublime_plugin.TextCommand):
         args = ['osascript']
         # add code lines to list of arguments
         for part in selection:
-            args.extend(['-e', 'tell app "R64" to cmd "' + part + '"\n'])
+            args.extend(['-e', 'tell app "Terminal" to do script "' + part +
+                '" in window 1',])
         # execute code
         subprocess.Popen(args)
 
