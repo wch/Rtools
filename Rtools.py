@@ -31,10 +31,6 @@ class SendSelectionCommand(sublime_plugin.TextCommand):
         return str
 
     def run(self, edit):
-        # Check if it's an R file
-        if "R.tmLanguage" not in self.view.settings().get('syntax'):
-            return
-
         # get selection
         selection = ""
         for region in self.view.sel():
